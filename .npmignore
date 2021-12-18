@@ -1,0 +1,11 @@
+node_modules
+examples
+src
+
+.editorconfig
+.prettierrc
+.eslintrc.json
+.stylelintrc.json
+tsconfig.json
+rollup.config.js
+README.md
