@@ -2,7 +2,7 @@
   "name": "components-examples",
   "version": "0.1.0",
   "description": "Examples for library of React components",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
