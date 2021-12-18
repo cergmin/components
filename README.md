@@ -1,11 +1,9 @@
-<h1 align="center">React components library</h1>
-
 <p align="center">
-  <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
+  <img alt="The logo of React components library" src="./logo.svg" height="100">
 </p>
 
 <p align="center">
-  <img alt="Components library logo" src="./examples/src/public/static/favicon.svg" height="150">
+  <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
 </p>
 
 ## Commands
