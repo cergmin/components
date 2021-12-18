@@ -3,7 +3,12 @@
 </p>
 
 <p align="center">
-  <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
+  <a href="https://github.com/cergmin/components/actions/workflows/linting.yml">
+    <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
+  </a>
+  <a href="https://github.com/cergmin/components/actions/workflows/examples-deployment.yml">
+    <img alt="Examples deployment status" src="https://github.com/cergmin/components/actions/workflows/examples-deployment.yml/badge.svg">
+  </a>
 </p>
 
 ## Commands
