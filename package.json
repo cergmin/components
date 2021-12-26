@@ -19,6 +19,7 @@
     "watch": "rollup -c -w",
     "test": "jest",
     "test-watch": "jest --watch",
+    "coverage": "jest --coverage",
     "fix": "prettier --write \"src/**/*.(js|jsx|ts|tsx)\" & eslint --ext js,jsx,ts,tsx src & stylelint --fix src/**/*.css"
   },
   "devDependencies": {

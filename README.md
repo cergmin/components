@@ -20,7 +20,9 @@ https://cergmin.github.io/components
 `npm run build-examples` — build examples<br>
 `npm run build-all` — build library and examples<br>
 `npm run watch` — run library building in watch mode<br>
-`npm run test` — run unit tests with jest<br>
+`npm run test` — run unit tests<br>
+`npm run test-watch` — run unit testing in watch mode<br>
+`npm run coverage` — generate coverage report<br>
 `npm run fix` — fix code with prettier, eslint and stylelint<br>
 
 ## Components
