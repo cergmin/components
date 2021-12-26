@@ -1,5 +1,6 @@
 <p align="center">
-  <img alt="The logo of React components library" src="./logo.svg" height="100">
+  <img alt="The logo of React components library" src="./light_logo.svg#gh-light-mode-only" height="100">
+  <img alt="The logo of React components library" src="./dark_logo.svg#gh-dark-mode-only" height="100">
 </p>
 
 <p align="center">

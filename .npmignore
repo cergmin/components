@@ -10,5 +10,6 @@ src
 tsconfig.json
 rollup.config.js
 jest.config.js
-logo.svg
+light_logo.svg
+dark_logo.svg
 README.md
