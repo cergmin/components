@@ -1,7 +1,7 @@
 module.exports = {
   testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  testPathIgnorePatterns: ['/node_modules'],
+  testPathIgnorePatterns: ['/node_modules/'],
   transform: {
     '\\.(js|jsx|ts|tsx)$': 'ts-jest',
   },
@@ -9,4 +9,8 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css)$': 'identity-obj-proxy',
   },
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+  ],
 };
