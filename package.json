@@ -1,6 +1,6 @@
 {
   "name": "components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Library of React components",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",

@@ -1,6 +1,9 @@
 # Change Log
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.1.2
+* Added library building and committing to "lib" branch with GitHub Actions.
+
 ## 0.1.1
 * Added examples page.
 * Added auto build and deploy of examples page with GitHub Actions.

@@ -13,6 +13,9 @@
   <a href="https://github.com/cergmin/components/actions/workflows/linting.yml">
     <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
   </a>
+  <a href="https://github.com/cergmin/components/actions/workflows/build.yml">
+    <img alt="Build status" src="https://github.com/cergmin/components/actions/workflows/build.yml/badge.svg">
+  </a>
 </p>
 
 ## Demo
