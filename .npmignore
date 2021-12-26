@@ -8,4 +8,6 @@ src
 .stylelintrc.json
 tsconfig.json
 rollup.config.js
+jest.config.js
+logo.svg
 README.md
