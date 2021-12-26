@@ -1,3 +1,4 @@
+.github
 node_modules
 coverage
 examples
@@ -5,11 +6,12 @@ src
 
 .editorconfig
 .prettierrc
-.eslintrc.json
+.eslintrc.js
 .stylelintrc.json
 tsconfig.json
 rollup.config.js
-jest.config.js
+jest.config.ts
+.gitignore
 light_logo.svg
 dark_logo.svg
 README.md
