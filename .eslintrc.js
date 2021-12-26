@@ -17,7 +17,10 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'jest'],
+  env: {
+    'jest/globals': true,
+  },
   rules: {
     'max-len': [
       'warn',

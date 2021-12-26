@@ -3,8 +3,15 @@
   margin: 0;
 }
 
-body {
+html,
+body,
+#root {
   height: 100%;
+}
+
+#root {
+  display: flex;
   box-sizing: border-box;
   padding: 20px;
+  gap: 20px;
 }

@@ -1,6 +1,6 @@
 {
   "name": "components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library of React components",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
@@ -14,17 +14,26 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "build-examples": "cd examples && npm run build",
+    "build-all": "rollup -c && cd examples && npm run build",
     "watch": "rollup -c -w",
-    "fix": "prettier --write \"src/**/*.(js|jsx|ts|tsx)\" & eslint --ext js,jsx,ts,tsx src & stylelint --fix src/**/*.css",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-examples": "cd examples && npm run build"
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "fix": "prettier --write \"src/**/*.(js|jsx|ts|tsx)\" & eslint --ext js,jsx,ts,tsx src & stylelint --fix src/**/*.css"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.4.1",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-react": "^7.27.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.5",
     "prettier": "^2.5.1",
     "rollup": "^2.61.1",
     "rollup-plugin-cleaner": "^1.0.0",
@@ -36,10 +45,13 @@
     "rollup-plugin-typescript2": "^0.31.1",
     "stylelint": "^14.1.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-order": "^5.0.0"
+    "stylelint-order": "^5.0.0",
+    "ts-jest": "^27.1.2"
   },
   "dependencies": {
-    "clsx": "^1.1.1"
+    "@types/react-dom": "^17.0.11",
+    "clsx": "^1.1.1",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "@types/react": "^17.0.37",

@@ -1,0 +1,28 @@
+.button {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(213deg 80% 40%);
+  background-color: hsl(213deg 100% 53%);
+  border-radius: 5px;
+  color: hsl(0deg 0% 100%);
+  font-family: sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+.button:hover:not(:disabled) {
+  background-color: hsl(213deg 100% 48%);
+}
+
+.button:active:not(:disabled) {
+  background-color: hsl(213deg 100% 45%);
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  filter: grayscale(0.5);
+  opacity: 0.4;
+}
