@@ -3,11 +3,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/cergmin/components/actions/workflows/linting.yml">
-    <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
+  <a href="https://codecov.io/gh/cergmin/components">
+    <img alt="Coverage status" src="https://codecov.io/gh/cergmin/components/branch/main/graph/badge.svg?token=GLLDOYT6FW"/>
   </a>
   <a href="https://github.com/cergmin/components/actions/workflows/testing.yml">
-    <img alt="Examples deployment status" src="https://github.com/cergmin/components/actions/workflows/testing.yml/badge.svg">
+    <img alt="Testing status" src="https://github.com/cergmin/components/actions/workflows/testing.yml/badge.svg">
+  </a>
+  <a href="https://github.com/cergmin/components/actions/workflows/linting.yml">
+    <img alt="Linting status" src="https://github.com/cergmin/components/actions/workflows/linting.yml/badge.svg">
   </a>
 </p>
 

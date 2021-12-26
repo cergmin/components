@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 * Added jest components testing.
 * Added auto testing with GitHub Actions.
+* Connected codecov
 
 ## 0.1.0
 * Initial release.
