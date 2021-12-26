@@ -1,0 +1,26 @@
+name: Codecov
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Package loading
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing dependencies
+        run:  npm ci
+      - name: Installing codecov
+        run:  npm i -D codecov
+      - name: Generating coverage report
+        run: npm run coverage
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
