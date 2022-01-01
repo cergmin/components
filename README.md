@@ -15,16 +15,35 @@
 ## Demo
 https://cergmin.github.io/components
 
+## How to run
+
+### 1. Install dependencies
+`npm i`<br>
+or<br>
+`pnpm i`
+
+### 2. Build library
+`npm run build`<br>
+or<br>
+`pnpm build`
+
+### 3. Build examples
+`npm run build-examples`<br>
+or<br>
+`pnpm build-examples`
+
+### 4. Open page with examples
+Open with your browser the page `examples/build/index.html`.
+
 ## Commands
-`npm i` — install dependencies<br>
-`npm run build` — build library<br>
-`npm run build-examples` — build examples<br>
-`npm run build-all` — build library and examples<br>
-`npm run watch` — run library building in watch mode<br>
-`npm run test` — run unit tests<br>
-`npm run test-watch` — run unit testing in watch mode<br>
-`npm run coverage` — generate coverage report<br>
-`npm run fix` — fix code with prettier, eslint and stylelint<br>
+`build` — build library<br>
+`build-examples` — build examples<br>
+`build-all` — build library and examples<br>
+`watch` — run library building in watch mode<br>
+`test` — run unit tests<br>
+`test-watch` — run unit testing in watch mode<br>
+`coverage` — generate coverage report<br>
+`fix` — fix code with prettier, eslint and stylelint<br>
 
 ## Components
 - SimpleButton

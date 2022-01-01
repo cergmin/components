@@ -1,7 +1,7 @@
 import cleaner from 'rollup-plugin-cleaner';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
@@ -29,7 +29,7 @@ export default {
       targets: ['./lib'],
     }),
     peerDepsExternal(),
-    resolve(),
+    nodeResolve(),
     commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
