@@ -11,6 +11,7 @@
   "dependencies": {
     "@babel/core": "^7.17.0",
     "@mdx-js/loader": "^1.6.22",
+    "@types/react": "^17.0.39",
     "clsx": "^1.1.1",
     "components": "file:..",
     "gray-matter": "^4.0.3",
