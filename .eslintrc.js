@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     node: true,
     es2021: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
@@ -17,10 +18,12 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'jest'],
-  env: {
-    'jest/globals': true,
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
+  plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
     'max-len': [
       'warn',
@@ -28,7 +31,7 @@ module.exports = {
         code: 80,
       },
     ],
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'comma-dangle': ['warn', 'always-multiline'],
     'import/prefer-default-export': ['off'],
     'no-alert': ['off'],
@@ -44,9 +47,18 @@ module.exports = {
     ],
     '@typescript-eslint/no-use-before-define': ['error'],
   },
-  settings: {
-    react: {
-      version: 'detect',
+  overrides: [
+    {
+      files: ['**/*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': ['off'],
+      },
     },
-  },
+    {
+      files: ['docs/**/*.jsx', 'docs/**/*.tsx'],
+      rules: {
+        'react/react-in-jsx-scope': ['off'],
+      },
+    },
+  ],
 };

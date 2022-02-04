@@ -1,0 +1,31 @@
+:root {
+    --base-background: var(--white);
+    --header-background: var(--blue-600);
+    --code-background: var(--black);
+
+    --base-color: var(--gray-1100);
+    --faint-color: var(--gray-800);
+    --accent-color: var(--blue-600);
+
+    --base-color-inverted: var(--white);
+    --faint-color-inverted: var(--gray-200);
+
+    --base-outline: var(--blue-700);
+    --base-outline-inverted: var(--white);
+
+    /* --ocean-gradient: linear-gradient(
+        160deg,
+        hsl(208deg 100% 29%),
+        hsl(234deg 92% 12%)
+    ); */
+    --ocean-gradient: linear-gradient(
+        160deg,
+        var(--blue-600),
+        var(--blue-1000)
+    );
+
+    --light-theme: 1;
+    --dark-theme: 0;
+
+    color-scheme: light;
+}

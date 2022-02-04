@@ -1,0 +1,48 @@
+.checkbox {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.checkboxInput {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.checkboxBackground {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid hsl(213deg 20% 65%);
+    background-color: hsl(213deg 15% 94%);
+    border-radius: 5px;
+}
+
+.checkboxInput:checked + .checkboxBackground {
+    border-color: hsl(213deg 80% 40%);
+    background-color: hsl(213deg 100% 53%);
+}
+
+.checkboxCheck {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+    opacity: 0;
+}
+
+.checkboxInput:checked + .checkboxBackground .checkboxCheck {
+    opacity: 1;
+}
+
+.checkboxInput:focus-visible + .checkboxBackground {
+    outline: 2px solid hsl(222deg 91% 31%);
+    outline-offset: 1px;
+}

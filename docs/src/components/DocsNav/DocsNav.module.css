@@ -1,0 +1,86 @@
+.list {
+    list-style: none;
+}
+
+.sublist {
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+}
+
+.link {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border: 1px solid transparent;
+    background: none;
+    border-radius: 5px;
+    color: var(--faint-color);
+    column-gap: 0.5rem;
+    outline: none;
+    text-decoration: none;
+}
+
+.link:hover {
+    border-color: hsl(
+        213deg 20% 60% /
+        calc(
+            50% * var(--light-theme) +
+            35% * var(--dark-theme)
+        )
+    );
+    background-color: hsl(
+        213deg 16% 88% /
+        calc(
+            50% * var(--light-theme) +
+            15% * var(--dark-theme)
+        )
+    );
+}
+
+.link:hover:not(.selected) {
+    color: var(--base-color);
+}
+
+.link:focus-visible {
+    outline: 2px solid var(--base-outline);
+    outline-offset: -2px;
+}
+
+.link.selected {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.sectionLink {
+    color: var(--base-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.sectionLink::before {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('/resources/images/icons/chevron-down.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    filter: invert(
+        calc(
+            0.5 * var(--light-theme) +
+            0.45 * var(--dark-theme)
+        )
+    );
+}
+
+.sectionLink[aria-expanded="false"]::before {
+    transform: rotate(-90deg);
+}
+
+.sectionLink[aria-expanded="false"] ~ .list{
+    display: none;
+}
