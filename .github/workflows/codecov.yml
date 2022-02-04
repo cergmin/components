@@ -14,12 +14,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Installing pnpm
+        run: npm install -g pnpm
       - name: Installing dependencies
-        run:  npm ci
+        run:  pnpm i --frozen-lockfile
       - name: Installing codecov
-        run:  npm i -D codecov
+        run:  pnpm add -D codecov
       - name: Generating coverage report
-        run: npm run coverage
+        run: pnpm coverage
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
