@@ -1,0 +1,136 @@
+.playground {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.demo {
+    position: sticky;
+    z-index: 5;
+    top: 1.5rem;
+    display: flex;
+    /* width: fit-content; */
+    border: 1px solid hsl(215deg 20% 80%);
+    background-color: hsl(215deg 15% 94%);
+    border-radius: 7px;
+}
+
+.demoContent {
+    display: flex;
+    flex-grow: 1;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.demoResizer {
+    position: relative;
+    display: flex;
+    width: 45px;
+    align-items: center;
+    border-left: 1px solid hsl(215deg 20% 80%);
+    cursor: col-resize;
+    user-select: none;
+}
+
+.demoResizer::before,
+.demoResizer::after {
+    position: absolute;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    left: 50%;
+    width: 1px;
+    background-color: var(--faint-color);
+    content: '';
+    opacity: 0.5;
+}
+
+.demoResizer:before {
+    transform: translateX(-0.125rem);
+}
+
+.demoResizer::after {
+    transform: translateX(0.125rem);
+}
+
+.demoResizerText {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 0.25rem 0;
+    background-color: hsl(215deg 15% 94%);
+    color: var(--faint-color);
+    cursor: col-resize;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.propsTableWrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.propsTable {
+    border-collapse: collapse;
+}
+
+.propsTable thead {
+    font-weight: 500;
+}
+
+.propsTable thead,
+.propsTable tr {
+    border-bottom: 1px solid hsl(215deg 20% 80%);
+}
+
+.propsTable td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    white-space: pre-wrap;
+}
+
+.propsTable td:first-child {
+    padding-left: 0;
+}
+
+.propsTable td:last-child {
+    padding-right: 0;
+}
+
+.propNameSuffix {
+    margin-left: 0.125rem;
+    color: var(--base-color);
+    font-weight: 500;
+    user-select: none;
+}
+
+.propNameSuffixNotRequired {
+    opacity: 0.5;
+}
+
+.propNameSuffixRequired {
+    color: red;
+}
+
+.propType code {
+    font-family: var(--ff-code, monospace);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.textInput,
+.selectInput {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid hsl(213deg 20% 65%);
+    background-color: hsl(213deg 15% 94%);
+    border-radius: 5px;
+    outline: none;
+}
+
+.textInput:focus-visible,
+.selectInput:focus-visible {
+    outline: 2px solid var(--base-outline);
+    outline-offset: 1px;
+}

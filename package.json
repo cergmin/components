@@ -2,24 +2,9 @@
   "name": "components",
   "version": "0.1.2",
   "description": "Library of React components",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cergmin/components.git"
+  "engines": {
+    "node": "^14 || >=16"
   },
-  "keywords": [
-    "react",
-    "library",
-    "components"
-  ],
-  "author": "Sergey Minakov <cergmin@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cergmin/components/issues"
-  },
-  "homepage": "https://github.com/cergmin/components#readme",
-  "main": "./lib/index.js",
-  "module": "./lib/index.mjs",
-  "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
       "require": "./lib/index.js",
@@ -27,15 +12,34 @@
       "types": "./lib/types/index.d.ts"
     }
   },
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/types/index.d.ts",
+  "keywords": [
+    "ui",
+    "react",
+    "library",
+    "components"
+  ],
   "scripts": {
+    "start:docs": "cd docs && npm run start",
     "build": "rollup -c",
-    "build-examples": "cd examples && npm run build",
-    "build-all": "rollup -c && cd examples && npm run build",
+    "build:docs": "cd docs && npm run build",
+    "build:examples": "cd examples && npm run build",
+    "build:all": "npm-run-all build build:docs build:examples",
     "watch": "rollup -c -w",
+    "watch:docs": "cd docs && npm run dev",
     "test": "jest",
-    "test-watch": "jest --watch",
+    "watch:test": "jest --watch",
     "coverage": "jest --coverage",
     "fix": "prettier --write \"src/**/*.(js|jsx|ts|tsx)\" & eslint --ext js,jsx,ts,tsx src & stylelint --fix src/**/*.css"
+  },
+  "author": "Sergey Minakov <cergmin@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/cergmin/components",
+  "repository": "github:cergmin/components",
+  "bugs": {
+    "url": "https://github.com/cergmin/components/issues"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
@@ -57,11 +61,13 @@
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.4.1",
+    "clean-publish": "^4.0.0",
     "eslint": "^8.6.0",
     "eslint-plugin-jest": "^25.3.3",
     "eslint-plugin-react": "^7.28.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "rollup": "^2.62.0",
@@ -75,5 +81,8 @@
     "stylelint-order": "^5.0.0",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0"
+  },
+  "clean-publish": {
+    "cleanDocs": true
   }
 }

@@ -1,0 +1,70 @@
+.intro {
+    padding: 2rem 0;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.description {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+}
+
+.buttonList {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.button {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    border: 1px solid hsl(213deg 80% 40%);
+    background: hsl(213deg 100% 53%);
+    border-radius: 5px;
+    color: hsl(0deg 0% 100%);
+    font-family: var(--ff-sans-serif, sans-serif);
+    font-size: 1rem;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+    text-decoration: none;
+}
+  
+.button:hover {
+    background-color: hsl(213deg 100% 48%);
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--base-outline);
+}
+  
+.button:active {
+    background-color: hsl(213deg 100% 45%);
+    transform: scale(0.97);
+}
+
+.button.secondary {
+    border: 1px solid hsl(213deg 20% 80%);
+    background: hsl(213deg 15% 94%);
+    color: hsl(0deg 0% 5%);
+}
+
+.button.secondary:hover {
+    background-color: hsl(213deg 15% 89%);
+}
+
+.button.secondary:active {
+    background-color: hsl(213deg 15% 86%);
+}
+
+@media screen and (max-width: 480px) {
+    .button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,158 @@
+---
+title: Button
+source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleButton/SimpleButton.tsx'
+---
+
+## Props
+
+<Playground
+  props={[
+    {
+      key: 'children',
+      tsType: 'ReactNode',
+      valueEditor: 'string',
+      value: 'Button',
+    },
+    {
+      key: 'type?',
+      tsType: "'button' | 'submit' | 'reset'",
+      valueEditor: 'select',
+      defaultValue: 'button',
+      value: ['button', 'submit', 'reset'],
+    },
+    {
+      key: 'appearance?',
+      tsType:
+        "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'link'",
+      valueEditor: 'select',
+      defaultValue: 'primary',
+      value: ['primary', 'secondary', 'success', 'danger', 'warning', 'link'],
+    },
+    {
+      key: 'leftIcon?',
+      tsType: 'ReactNode',
+      valueEditor: 'select',
+      value: [undefined, <img src="/resources/images/github.svg" />],
+    },
+    {
+      key: 'rightIcon?',
+      tsType: 'ReactNode',
+      valueEditor: 'select',
+      value: [undefined, <img src="/resources/images/github.svg" />],
+    },
+    {
+      key: 'size?',
+      tsType: "'small' | 'medium' | 'large'",
+      valueEditor: 'select',
+      defaultValue: 'medium',
+      value: ['small', 'medium', 'large'],
+    },
+    {
+      key: 'disabled?',
+      tsType: 'boolean',
+      valueEditor: 'boolean',
+      value: false,
+    },
+    {
+      key: 'loading?',
+      tsType: 'boolean',
+      valueEditor: 'boolean',
+      value: false,
+    },
+    {
+      key: 'onClick?',
+      tsType: 'MouseEventHandler<\u200BHTMLButtonElement\u200B>',
+      valueEditor: 'select',
+      value: [
+        undefined,
+        () => {
+          alert('Hello, world!');
+        },
+        (e) => {
+          alert(e.target.innerText);
+        },
+      ],
+    },
+  ]}>
+  <SimpleButton />
+</Playground>
+
+## Examples
+
+### Basic
+
+<Example>
+  <SimpleButton>Button</SimpleButton>
+</Example>
+
+```javascript
+import { SimpleButton } from 'components';
+
+<SimpleButton>Button</SimpleButton>
+```
+
+### Different styles
+
+<Example>
+  <SimpleButton appearance="primary">Primary</SimpleButton>
+  <SimpleButton appearance="secondary">Secondary</SimpleButton>
+  <SimpleButton appearance="success">Success</SimpleButton>
+  <SimpleButton appearance="danger">Danger</SimpleButton>
+  <SimpleButton appearance="warning">Warning</SimpleButton>
+  <SimpleButton appearance="link">Link</SimpleButton>
+</Example>
+
+```javascript
+import { SimpleButton } from 'components';
+
+<SimpleButton appearance="primary">Primary</SimpleButton>
+<SimpleButton appearance="secondary">Secondary</SimpleButton>
+<SimpleButton appearance="success">Success</SimpleButton>
+<SimpleButton appearance="danger">Danger</SimpleButton>
+<SimpleButton appearance="warning">Warning</SimpleButton>
+<SimpleButton appearance="link">Link</SimpleButton>
+```
+
+### With icon
+
+<Example>
+  <SimpleButton>💾 Save</SimpleButton>
+  <SimpleButton>Find 🔎</SimpleButton>
+</Example>
+
+```javascript
+import { SimpleButton } from 'components';
+
+<SimpleButton leftIcon="💾">Save</SimpleButton>
+<SimpleButton rightIcon="🔎">Find</SimpleButton>
+```
+
+### Sizes
+
+<Example>
+  <SimpleButton>Small</SimpleButton>
+  <SimpleButton>Medium</SimpleButton>
+  <SimpleButton>Large</SimpleButton>
+</Example>
+
+```javascript
+import { SimpleButton } from 'components';
+
+<SimpleButton>Small</SimpleButton>
+<SimpleButton>Medium</SimpleButton>
+<SimpleButton>Large</SimpleButton>
+```
+
+### States
+
+<Example>
+  <SimpleButton loading>Loading</SimpleButton>
+  <SimpleButton disabled>Disabled</SimpleButton>
+</Example>
+
+```javascript
+import { SimpleButton } from 'components';
+
+<SimpleButton loading>Loading</SimpleButton>
+<SimpleButton disabled>Disabled</SimpleButton>
+```

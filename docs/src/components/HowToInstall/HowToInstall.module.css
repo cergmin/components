@@ -1,0 +1,46 @@
+.install {
+    overflow: hidden;
+    padding: 2rem;
+    background: var(--ocean-gradient);
+    border-radius: 10px;
+    color: var(--base-color-inverted);
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.description {
+    margin-bottom: 2rem;
+    color: var(--faint-color-inverted);
+    font-size: 1.125rem;
+}
+
+.codeList {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.code {
+    display: block;
+    padding: 1rem 1.25rem;
+    background-color: var(--code-background);
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+.code:focus-visible {
+    outline: 2px solid var(--base-outline-inverted);
+}
+
+@media screen and (max-width: 480px) {
+    .code {
+        padding: 0.8rem 1rem;
+        font-size: 0.875rem;
+    }
+}
