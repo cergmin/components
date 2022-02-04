@@ -1,0 +1,76 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Package loading
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing ESLint dependencies
+        run:  npm install --save-dev eslint-plugin-react @typescript-eslint/parser @typescript-eslint/eslint-plugin
+      - name: Installing Stylelint dependencies
+        run:  npm install --save-dev stylelint-order stylelint-config-idiomatic-order
+      - name: ESLint check
+        run: npx eslint --ext js,jsx,ts,tsx src
+      - name: Stylelint check
+        run: npx stylelint src/**/*.css
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Package loading
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing dependencies
+        run:  npm ci
+      - name: Running unit tests
+        run: npm run test
+  npm-build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Package loading
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing library dependencies
+        run: npm i
+      - name: Installing docs dependencies
+        run: cd docs && npm i
+      - name: Installing examples dependencies
+        run: cd examples && npm i
+      - name: Building library
+        run: npm run build
+      - name: Building docs
+        run: npm run build:docs
+      - name: Building examples
+        run: npm run build:examples
+  pnpm-build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Package loading
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing pnpm
+        run: npm install -g pnpm
+      - name: Installing library dependencies
+        run: pnpm i
+      - name: Installing docs dependencies
+        run: cd docs && pnpm i
+      - name: Installing examples dependencies
+        run: cd examples && pnpm i
+      - name: Building library
+        run: pnpm build
+      - name: Building docs
+        run: pnpm build:docs
+      - name: Building examples
+        run: pnpm build:examples

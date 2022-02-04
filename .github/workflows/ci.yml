@@ -44,12 +44,16 @@ jobs:
           node-version: 16
       - name: Installing library dependencies
         run: npm i
+      - name: Installing docs dependencies
+        run: cd docs && npm i
       - name: Installing examples dependencies
         run: cd examples && npm i
       - name: Building library
         run: npm run build
+      - name: Building docs
+        run: npm run build:docs
       - name: Building examples
-        run: npm run build-examples
+        run: npm run build:examples
   pnpm-build-check:
     runs-on: ubuntu-latest
     steps:
@@ -62,12 +66,16 @@ jobs:
         run: npm install -g pnpm
       - name: Installing library dependencies
         run: pnpm i
+      - name: Installing docs dependencies
+        run: cd docs && pnpm i
       - name: Installing examples dependencies
         run: cd examples && pnpm i
       - name: Building library
         run: pnpm build
+      - name: Building docs
+        run: pnpm build:docs
       - name: Building examples
-        run: pnpm build-examples
+        run: pnpm build:examples
   examples-deploy:
     runs-on: ubuntu-latest
     needs:
