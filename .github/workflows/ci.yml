@@ -9,8 +9,7 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - name: Package loading
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -25,33 +24,31 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Package loading
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
       - name: Installing pnpm
         run: npm install -g pnpm
       - name: Installing dependencies
-        run:  pnpm ci
+        run:  pnpm i --frozen-lockfile
       - name: Running unit tests
         run: pnpm test
   build-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Package loading
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
       - name: Installing pnpm
         run: npm install -g pnpm
       - name: Installing library dependencies
-        run: pnpm i
+        run: pnpm i --frozen-lockfile
       - name: Installing docs dependencies
-        run: cd docs && pnpm i
+        run: cd docs && pnpm i --frozen-lockfile
       - name: Installing examples dependencies
-        run: cd examples && pnpm i
+        run: cd examples && pnpm i --frozen-lockfile
       - name: Building library
         run: pnpm build
       - name: Building docs
@@ -65,8 +62,7 @@ jobs:
       - unit-tests
       - build-check
     steps:
-      - name: Package loading
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -79,14 +75,16 @@ jobs:
           git config --global user.name "Sergey Minakov"
       - name: Checkout to examples branch
         run: git checkout --orphan examples
+      - name: Installing pnpm
+        run: npm install -g pnpm
       - name: Installing library dependencies
-        run:  npm ci
+        run:  pnpm i --frozen-lockfile
       - name: Installing examples dependencies
-        run:  cd examples && npm ci
+        run:  cd examples && pnpm i --frozen-lockfile
       - name: Building library
-        run:  npm run build
+        run:  pnpm build
       - name: Building examples
-        run:  npm run build-examples
+        run:  pnpm build:examples
       - name: Stage examples build
         run: git --work-tree examples/build add --all
       - name: Commit examples build
@@ -100,8 +98,7 @@ jobs:
       - unit-tests
       - build-check
     steps:
-      - name: Package loading
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -114,10 +111,12 @@ jobs:
           git config --global user.name "Sergey Minakov"
       - name: Checkout to lib branch
         run: git checkout --orphan lib
+      - name: Installing pnpm
+        run: npm install -g pnpm
       - name: Installing library dependencies
-        run:  npm ci
+        run:  pnpm i --frozen-lockfile
       - name: Building library
-        run:  npm run build
+        run:  pnpm build
       - name: Replace .gitignore with .npmignore
         run: |
           rm .gitignore
