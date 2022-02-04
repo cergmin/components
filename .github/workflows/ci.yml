@@ -30,10 +30,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Installing pnpm
+        run: npm install -g pnpm
       - name: Installing dependencies
-        run:  npm ci
+        run:  pnpm ci
       - name: Running unit tests
-        run: npm run test
+        run: pnpm test
   build-check:
     runs-on: ubuntu-latest
     steps:
