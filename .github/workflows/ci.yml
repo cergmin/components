@@ -34,27 +34,7 @@ jobs:
         run:  npm ci
       - name: Running unit tests
         run: npm run test
-  npm-build-check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Package loading
-        uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - name: Installing library dependencies
-        run: npm i
-      - name: Installing docs dependencies
-        run: cd docs && npm i
-      - name: Installing examples dependencies
-        run: cd examples && npm i
-      - name: Building library
-        run: npm run build
-      - name: Building docs
-        run: npm run build:docs
-      - name: Building examples
-        run: npm run build:examples
-  pnpm-build-check:
+  build-check:
     runs-on: ubuntu-latest
     steps:
       - name: Package loading
@@ -81,8 +61,7 @@ jobs:
     needs:
       - linting
       - unit-tests
-      - npm-build-check
-      - pnpm-build-check
+      - build-check
     steps:
       - name: Package loading
         uses: actions/checkout@v2
@@ -117,8 +96,7 @@ jobs:
     needs:
       - linting
       - unit-tests
-      - npm-build-check
-      - pnpm-build-check
+      - build-check
     steps:
       - name: Package loading
         uses: actions/checkout@v2

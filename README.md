@@ -19,15 +19,16 @@ https://cergmin.github.io/components
 
 We use Rollup to build the library and Next.js to build the documentation. You can also run Jest tests over the code.
 
+You should use [pnpm](https://pnpm.io/) instead of npm.
+
 Follow these steps to run the project locally:
 
 1. Download and install [Node.js 16](https://nodejs.org/en/).
+1. Install [pnpm](https://pnpm.io/) (`npm install -g pnpm`).
 1. Fork [the repository](https://github.com/cergmin/components) and clone it.
-1. Open root directory and run `npm install` to install dependencies.
-1. Open **/docs** folder and run `npm install` again to install documentation dependencies.
+1. Open root directory and run `pnpm install` to install dependencies.
+1. Open **/docs** folder and run `pnpm install` again to install documentation dependencies.
 1. Go back to the root.
-
-We recommend using [pnpm](https://pnpm.io/) instead of npm.
 
 ## Scripts
 `start:docs` — run next.js server with documentation<br>
