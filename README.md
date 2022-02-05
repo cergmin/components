@@ -15,8 +15,8 @@
   </a>
 </p>
 
-## Demo
-https://cergmin.github.io/components
+## Documentation
+https://components-cergmin.vercel.app
 
 ## Tooling setup
 
