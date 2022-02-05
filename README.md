@@ -10,6 +10,9 @@
   <a href="https://github.com/cergmin/components/actions/workflows/ci.yml">
     <img alt="Testing status" src="https://github.com/cergmin/components/actions/workflows/ci.yml/badge.svg">
   </a>
+  <a href="https://components-cergmin.vercel.app/">
+    <img alt="Vercel app status" src="https://vercelbadge.vercel.app/api/cergmin/components">
+  </a>
 </p>
 
 ## Demo
