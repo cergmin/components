@@ -11,7 +11,7 @@ body {
 
 .wrapper {
     --wrapper-max-width: 1000px;
-    --wrapper-padding: clamp(16px, 3.2vw, 32px);
+    --wrapper-padding: clamp(24px, 3.2vw, 32px);
 
     width: 100%;
     max-width: calc(

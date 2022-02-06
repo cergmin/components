@@ -21,54 +21,60 @@ const Footer = ({ columns, libVersion }: FooterProps) => {
 
       <div className="wrapper">
         <div className={s.layout}>
-          <div className={s.column}>
-            <h3 className={s.columnTitle}>Components</h3>
-            <p className={s.description}>
-              Designed and built with love by&nbsp;
-              <Link href="https://github.com/cergmin">
-                <a
-                  className={clsx(s.link, s.highlighted)}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Sergey&nbsp;Minakov
-                </a>
-              </Link>
-              .
-            </p>
-            <p className={s.description}>
-              Code licensed&#160;
-              <Link href="https://github.com/cergmin/components/blob/main/LICENSE">
-                <a
-                  className={clsx(s.link, s.highlighted)}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  MIT
-                </a>
-              </Link>
-              .
-            </p>
-            <p className={s.description}>Current version: {libVersion}.</p>
-          </div>
-
-          {columns.map((column) => (
-            <div className={s.column} key={column.title}>
-              <h3 className={s.columnTitle}>{column.title}</h3>
-              <ul className={s.list}>
-                {column.links.map((link) => (
-                  <li className={s.listItem} key={link.url}>
-                    <Link href={link.url}>
-                      <a
-                        className={s.link}
-                        target={link.external && '_blank'}
-                        rel={link.external && 'noopener noreferrer'}>
-                        {link.text}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className={s.layoutLeft}>
+            <div className={s.column}>
+              <p className={s.description}>
+                Designed and built
+                <br />
+                by&nbsp;
+                <Link href="https://github.com/cergmin">
+                  <a
+                    className={clsx(s.link, s.highlighted)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Sergey Minakov's github page">
+                    Sergey&nbsp;Minakov
+                  </a>
+                </Link>
+                .
+              </p>
+              <p className={s.description}>
+                Code licensed&#160;
+                <Link href="https://github.com/cergmin/components/blob/main/LICENSE">
+                  <a
+                    className={clsx(s.link, s.highlighted)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="License text">
+                    MIT
+                  </a>
+                </Link>
+                .
+              </p>
+              <p className={s.description}>Current version: {libVersion}.</p>
             </div>
-          ))}
+          </div>
+          <div className={s.layoutRight}>
+            {columns.map((column) => (
+              <div className={s.column} key={column.title}>
+                <h3 className={s.columnTitle}>{column.title}</h3>
+                <ul className={s.list}>
+                  {column.links.map((link) => (
+                    <li className={s.listItem} key={link.url}>
+                      <Link href={link.url}>
+                        <a
+                          className={s.link}
+                          target={link.external && '_blank'}
+                          rel={link.external && 'noopener noreferrer'}>
+                          {link.text}
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
