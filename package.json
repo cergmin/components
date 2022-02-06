@@ -105,6 +105,7 @@
       "CONTRIBUTING.md"
     ],
     "cleanDocs": true,
+    "withoutPublish": true,
     "packageManager": "pnpm"
   }
 }
