@@ -5,13 +5,16 @@
 
 <p align="center">
   <a href="https://codecov.io/gh/cergmin/components">
-    <img alt="Coverage status" src="https://codecov.io/gh/cergmin/components/branch/main/graph/badge.svg?token=GLLDOYT6FW"/>
+    <img alt="Coverage status badge" src="https://codecov.io/gh/cergmin/components/branch/main/graph/badge.svg?token=GLLDOYT6FW"/>
   </a>
   <a href="https://github.com/cergmin/components/actions/workflows/ci.yml">
-    <img alt="Testing status" src="https://github.com/cergmin/components/actions/workflows/ci.yml/badge.svg">
+    <img alt="Testing status badge" src="https://github.com/cergmin/components/actions/workflows/ci.yml/badge.svg">
   </a>
   <a href="https://components-cergmin.vercel.app/">
-    <img alt="Vercel app status" src="https://vercelbadge.vercel.app/api/cergmin/components">
+    <img alt="Vercel app status badge" src="https://vercelbadge.vercel.app/api/cergmin/components">
+  </a>
+  <a href="https://www.npmjs.com/package/@cergmin/components">
+    <img alt="NPM version badge" src="https://img.shields.io/npm/v/@cergmin/components?color=blue">
   </a>
 </p>
 
