@@ -31,7 +31,8 @@ const Footer = ({ columns, libVersion }: FooterProps) => {
                   <a
                     className={clsx(s.link, s.highlighted)}
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="Sergey Minakov's github page">
                     Sergey&nbsp;Minakov
                   </a>
                 </Link>
@@ -43,7 +44,8 @@ const Footer = ({ columns, libVersion }: FooterProps) => {
                   <a
                     className={clsx(s.link, s.highlighted)}
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="License text">
                     MIT
                   </a>
                 </Link>

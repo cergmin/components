@@ -48,9 +48,16 @@
     color: var(--accent-color);
 }
 
+.link:focus-visible,
 .link:hover {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+.link:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--base-outline);
+    outline-offset: 2px;
 }
 
 @media screen and (max-width: 768px) {
