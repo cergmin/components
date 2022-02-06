@@ -67,11 +67,6 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
           external: true,
         },
         {
-          text: 'LinkedIn',
-          url: 'http://linkedin.com/in/cergmin',
-          external: true,
-        },
-        {
           text: 'Email',
           url: 'mailto:cergmin@gmail.com',
         },
@@ -85,11 +80,6 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
     {
       title: 'Technologies',
       links: [
-        {
-          text: 'Algolia',
-          url: 'https://www.algolia.com',
-          external: true,
-        },
         {
           text: 'Font Awesome',
           url: 'https://fontawesome.com',
