@@ -32,11 +32,15 @@ const mdxComponents = {
     <Example {...props} className={s.example} />
   ),
   code: Code,
-  a: (
-    children: ReactNode,
-    href: string,
-    target?: HTMLAttributeAnchorTarget,
-  ) => (
+  a: ({
+    children,
+    href,
+    target,
+  }: {
+    children: ReactNode;
+    href: string;
+    target?: HTMLAttributeAnchorTarget;
+  }) => (
     <Link href={href}>
       <a className={s.link} target={target} rel="noopener noreferrer">
         {children}
