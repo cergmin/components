@@ -1,6 +1,6 @@
 ---
 title: Button
-source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleButton/SimpleButton.tsx'
+source: 'https://github.com/cergmin/components/blob/main/src/components/Button/Button.tsx'
 ---
 
 ## Props
@@ -14,11 +14,17 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleBu
       value: 'Button',
     },
     {
-      key: 'type?',
-      tsType: "'button' | 'submit' | 'reset'",
+      key: 'href?',
+      tsType: 'string',
+      valueEditor: 'string',
+      value: '',
+    },
+    {
+      key: 'target?',
+      tsType: "'_blank' | '_self' | '_parent' | '_top'",
       valueEditor: 'select',
-      defaultValue: 'button',
-      value: ['button', 'submit', 'reset'],
+      defaultValue: '_self',
+      value: ['_blank', '_self', '_parent', '_top'],
     },
     {
       key: 'appearance?',
@@ -29,23 +35,40 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleBu
       value: ['primary', 'secondary', 'success', 'danger', 'warning', 'link'],
     },
     {
-      key: 'leftIcon?',
-      tsType: 'ReactNode',
-      valueEditor: 'select',
-      value: [undefined, <img src="/resources/images/github.svg" />],
-    },
-    {
-      key: 'rightIcon?',
-      tsType: 'ReactNode',
-      valueEditor: 'select',
-      value: [undefined, <img src="/resources/images/github.svg" />],
-    },
-    {
       key: 'size?',
       tsType: "'small' | 'medium' | 'large'",
       valueEditor: 'select',
       defaultValue: 'medium',
       value: ['small', 'medium', 'large'],
+    },
+    {
+      key: 'type?',
+      tsType: "'button' | 'submit' | 'reset'",
+      valueEditor: 'select',
+      defaultValue: 'button',
+      value: ['button', 'submit', 'reset'],
+    },
+    {
+      key: 'iconStart?',
+      tsType: 'ReactNode',
+      valueEditor: 'select',
+      value: [
+        undefined,
+        '🔎',
+        '💾',
+        <img src="/resources/images/github.svg" />,
+      ],
+    },
+    {
+      key: 'iconEnd?',
+      tsType: 'ReactNode',
+      valueEditor: 'select',
+      value: [
+        undefined,
+        '🔎',
+        '💾',
+        <img src="/resources/images/github.svg" />,
+      ],
     },
     {
       key: 'disabled?',
@@ -74,7 +97,7 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleBu
       ],
     },
   ]}>
-  <SimpleButton />
+  <Button />
 </Playground>
 
 ## Examples
@@ -82,77 +105,95 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/SimpleBu
 ### Basic
 
 <Example>
-  <SimpleButton>Button</SimpleButton>
+  <Button>Button</Button>
 </Example>
 
 ```javascript
-import { SimpleButton } from 'components';
+import { Button } from '@cergmin/components';
 
-<SimpleButton>Button</SimpleButton>
+<Button>Button</Button>;
 ```
 
 ### Different styles
 
 <Example>
-  <SimpleButton appearance="primary">Primary</SimpleButton>
-  <SimpleButton appearance="secondary">Secondary</SimpleButton>
-  <SimpleButton appearance="success">Success</SimpleButton>
-  <SimpleButton appearance="danger">Danger</SimpleButton>
-  <SimpleButton appearance="warning">Warning</SimpleButton>
-  <SimpleButton appearance="link">Link</SimpleButton>
+  <Button appearance="primary">Primary</Button>
+  <Button appearance="secondary">Secondary</Button>
+  <Button appearance="success">Success</Button>
+  <Button appearance="danger">Danger</Button>
+  <Button appearance="warning">Warning</Button>
+  <Button appearance="link">Link</Button>
 </Example>
 
 ```javascript
-import { SimpleButton } from 'components';
+import { Button } from '@cergmin/components';
 
-<SimpleButton appearance="primary">Primary</SimpleButton>
-<SimpleButton appearance="secondary">Secondary</SimpleButton>
-<SimpleButton appearance="success">Success</SimpleButton>
-<SimpleButton appearance="danger">Danger</SimpleButton>
-<SimpleButton appearance="warning">Warning</SimpleButton>
-<SimpleButton appearance="link">Link</SimpleButton>
+<Button appearance="primary">Primary</Button>
+<Button appearance="secondary">Secondary</Button>
+<Button appearance="success">Success</Button>
+<Button appearance="danger">Danger</Button>
+<Button appearance="warning">Warning</Button>
+<Button appearance="link">Link</Button>
 ```
 
 ### With icon
 
 <Example>
-  <SimpleButton>💾 Save</SimpleButton>
-  <SimpleButton>Find 🔎</SimpleButton>
+  <Button iconStart="💾">Save</Button>
+  <Button iconEnd="🔎">Find</Button>
 </Example>
 
 ```javascript
-import { SimpleButton } from 'components';
+import { Button } from '@cergmin/components';
 
-<SimpleButton leftIcon="💾">Save</SimpleButton>
-<SimpleButton rightIcon="🔎">Find</SimpleButton>
+<Button iconStart="💾">Save</Button>
+<Button iconEnd="🔎">Find</Button>
 ```
 
 ### Sizes
 
 <Example>
-  <SimpleButton>Small</SimpleButton>
-  <SimpleButton>Medium</SimpleButton>
-  <SimpleButton>Large</SimpleButton>
+  <Button size="small">Small</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="large">Large</Button>
 </Example>
 
 ```javascript
-import { SimpleButton } from 'components';
+import { Button } from '@cergmin/components';
 
-<SimpleButton>Small</SimpleButton>
-<SimpleButton>Medium</SimpleButton>
-<SimpleButton>Large</SimpleButton>
+<Button size="small">Small</Button>
+<Button size="medium">Medium</Button>
+<Button size="large">Large</Button>
 ```
 
 ### States
 
 <Example>
-  <SimpleButton loading>Loading</SimpleButton>
-  <SimpleButton disabled>Disabled</SimpleButton>
+  <Button loading>Loading</Button>
+  <Button disabled>Disabled</Button>
 </Example>
 
 ```javascript
-import { SimpleButton } from 'components';
+import { Button } from '@cergmin/components';
 
-<SimpleButton loading>Loading</SimpleButton>
-<SimpleButton disabled>Disabled</SimpleButton>
+<Button loading>Loading</Button>
+<Button disabled>Disabled</Button>
+```
+
+### Links
+
+<Example>
+  <Button href="https://yandex.com">Link</Button>
+  <Button href="https://yandex.com" target="_blank">
+    External link
+  </Button>
+</Example>
+
+```javascript
+import { Button } from '@cergmin/components';
+
+<Button href="https://yandex.com">Link</Button>
+<Button href="https://yandex.com" target="_blank">
+  External link
+</Button>
 ```

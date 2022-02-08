@@ -3,23 +3,23 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import events from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
-import { SimpleButton } from '.';
+import { Button } from '.';
 
-describe('SimpleButton', () => {
+describe('Button', () => {
   test('should have the correct text label', async () => {
-    const { container } = render(<SimpleButton id="button">Text</SimpleButton>);
+    const { container } = render(<Button id="button">Text</Button>);
 
-    const simpleButton = container.querySelector('#button');
+    const button = container.querySelector('#button');
 
-    expect(simpleButton.textContent).toBe('Text');
+    expect(button.textContent).toBe('Text');
   });
 
   test('should have the correct aria role', async () => {
-    const { getByRole } = render(<SimpleButton id="button">Text</SimpleButton>);
+    const { getByRole } = render(<Button id="button">Text</Button>);
 
-    const simpleButton = getByRole('button');
+    const button = getByRole('button');
 
-    expect(simpleButton).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   });
 
   test('should emit click event', async () => {
@@ -27,15 +27,15 @@ describe('SimpleButton', () => {
     const handleClickEvent = () => (hasClickEventBeenEmitted = true);
 
     const { container } = render(
-      <SimpleButton id="button" onClick={handleClickEvent}>
+      <Button id="button" onClick={handleClickEvent}>
         Text
-      </SimpleButton>,
+      </Button>,
     );
 
-    const simpleButton = container.querySelector('#button');
+    const button = container.querySelector('#button');
 
     act(() => {
-      events.click(simpleButton);
+      events.click(button);
     });
 
     expect(hasClickEventBeenEmitted).toBeTruthy();
@@ -46,15 +46,15 @@ describe('SimpleButton', () => {
     const handleClickEvent = () => (hasClickEventBeenEmitted = true);
 
     const { container } = render(
-      <SimpleButton id="button" disabled onClick={handleClickEvent}>
+      <Button id="button" disabled onClick={handleClickEvent}>
         Text
-      </SimpleButton>,
+      </Button>,
     );
 
-    const simpleButton = container.querySelector('#button');
+    const button = container.querySelector('#button');
 
     act(() => {
-      events.click(simpleButton);
+      events.click(button);
     });
 
     expect(hasClickEventBeenEmitted).toBeFalsy();

@@ -13,7 +13,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@types/react": "^17.0.39",
     "clsx": "^1.1.1",
-    "components": "file:..",
+    "@cergmin/components": "file:..",
     "gray-matter": "^4.0.3",
     "next": "^12.0.7",
     "next-mdx-remote": "^3.0.8",

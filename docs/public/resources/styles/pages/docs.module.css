@@ -35,7 +35,7 @@
     line-height: 1.5;
 }
 
-.content a{
+.content .link{
     color: var(--accent-color);
     text-decoration: underline;
 }

@@ -19,6 +19,6 @@
       }
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/components/SimpleButton/SimpleButton.test.jsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/components/**/*.test.jsx"],
   "exclude": ["node_modules"]
 }
