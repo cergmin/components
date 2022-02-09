@@ -17,8 +17,6 @@ export interface ButtonProps {
     | 'warning'
     | 'link';
   size?: 'small' | 'medium' | 'large';
-  iconStart?: ReactNode;
-  iconEnd?: ReactNode;
   disabled?: boolean;
   loading?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
@@ -33,8 +31,6 @@ export const Button = ({
   type,
   appearance,
   size,
-  iconStart,
-  iconEnd,
   disabled,
   loading,
   onClick,
@@ -45,13 +41,7 @@ export const Button = ({
   appearance = appearance || 'primary';
   size = size || 'medium';
 
-  const buttonContent = (
-    <>
-      {iconStart && <div className={s.iconStart}>{iconStart}</div>}
-      <div className={s.content}>{children}</div>
-      {iconEnd && <div className={s.iconEnd}>{iconEnd}</div>}
-    </>
-  );
+  const buttonContent = <div className={s.content}>{children}</div>;
 
   const appearanceClassName =
     'appearance' +
