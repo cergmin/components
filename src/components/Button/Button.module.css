@@ -124,6 +124,10 @@
       &:active {
         background-color: var(--cmp-green-600);
       }
+
+      &:focus-visible {
+        outline-color: var(--cmp-green-750);
+      }
     }
 
     &Danger {
@@ -138,6 +142,10 @@
       &:active {
         background-color: var(--cmp-red-600);
       }
+
+      &:focus-visible {
+        outline-color: var(--cmp-red-750);
+      }
     }
 
     &Warning {
@@ -151,6 +159,10 @@
 
       &:active {
         background-color: var(--cmp-yellow-550);
+      }
+
+      &:focus-visible {
+        outline-color: var(--cmp-yellow-750);
       }
     }
 
