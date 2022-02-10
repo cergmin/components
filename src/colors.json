@@ -80,6 +80,10 @@
         "color": "000000"
       },
       {
+        "name": "cmp-gray-950",
+        "color": "080809"
+      },
+      {
         "name": "cmp-gray-900",
         "color": "16171A"
       },
@@ -114,6 +118,10 @@
       {
         "name": "cmp-gray-100",
         "color": "E7EAF0"
+      },
+      {
+        "name": "cmp-gray-75",
+        "color": "EBEEF3"
       },
       {
         "name": "cmp-gray-50",
@@ -169,6 +177,10 @@
   {
     "paletteName": "blue",
     "swatches": [
+      {
+        "name": "cmp-blue-950",
+        "color": "000F47"
+      },
       {
         "name": "cmp-blue-900",
         "color": "00175C"

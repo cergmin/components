@@ -50,25 +50,19 @@
     align-items: center;
     justify-content: center;
     padding: 0 0.5rem;
-    color: var(--faint-color-inverted);
+    color: var(--base-color-inverted);
     font-weight: 400;
+    opacity: 0.75;
     text-decoration: none;
 }
 
-.navLink:hover {
-    color: var(--base-color-inverted);
+.navLink:hover,
+.iconLink:hover {
+    opacity: 1;
 }
 
 .navLink.selected {
-    color: var(--base-color-inverted);
     font-weight: 500;
-}
-
-.iconLink {
-    opacity: 0.75;
-}
-
-.iconLink:hover {
     opacity: 1;
 }
 

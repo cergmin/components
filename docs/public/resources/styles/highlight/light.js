@@ -81,7 +81,7 @@ export default {
     color: 'var(--red-700)',
   },
   punctuation: {
-    color: 'var(--gray-1100)',
+    color: 'var(--gray-900)',
   },
   operator: {
     color: '#393A34',
@@ -153,16 +153,16 @@ export default {
     color: 'var(--cyan-800)',
   },
   '.language-json .token.property': {
-    color: 'var(--cyan-700)',
+    color: 'var(--cyan-800)',
   },
   tag: {
-    color: '#800000',
+    color: 'var(--orange-700)',
   },
   'attr-name': {
-    color: 'var(--blue-600)',
+    color: 'var(--blue-700)',
   },
   property: {
-    color: 'var(--blue-600)',
+    color: 'var(--blue-700)',
   },
   regex: {
     color: '#ff0000',

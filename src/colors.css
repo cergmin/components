@@ -17,6 +17,7 @@
   --cmp-yellow-150: #FEEFA4;
   --cmp-yellow-100: #FFF4BF;
   --cmp-black: #000000;
+  --cmp-gray-950: #080809;
   --cmp-gray-900: #16171A;
   --cmp-gray-800: #33363B;
   --cmp-gray-700: #5E626A;
@@ -26,6 +27,7 @@
   --cmp-gray-300: #CDD3DF;
   --cmp-gray-200: #DADEE8;
   --cmp-gray-100: #E7EAF0;
+  --cmp-gray-75: #EBEEF3;
   --cmp-gray-50: #F0F3F8;
   --cmp-white: #F7FAFF;
   --cmp-purple-1100: #3A0F4D;
@@ -37,6 +39,7 @@
   --cmp-purple-300: #B158E1;
   --cmp-purple-200: #C474F0;
   --cmp-purple-100: #D894FF;
+  --cmp-blue-950: #000F47;
   --cmp-blue-900: #00175C;
   --cmp-blue-850: #001F6F;
   --cmp-blue-800: #002982;
