@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
+import postcssNested from 'postcss-nested';
 import { terser } from 'rollup-plugin-terser';
 import packageJSON from './package.json';
 
@@ -38,7 +39,7 @@ export default {
       clean: true,
     }),
     postcss({
-      plugins: [autoprefixer()],
+      plugins: [autoprefixer(), postcssNested()],
       minimize: IS_PRODUCTION,
       sourceMap: IS_PRODUCTION ? false : 'inline',
       extract: false,

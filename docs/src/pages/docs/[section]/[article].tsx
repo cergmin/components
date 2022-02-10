@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+import { HTMLAttributeAnchorTarget, ReactNode, useMemo } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import matter from 'gray-matter';
@@ -11,7 +12,7 @@ import s from '@/resources/styles/pages/docs.module.css';
 import Playground from '@/components/Playground';
 import Example, { IExmapleProps } from '@/components/Example';
 import Code from '@/components/Code';
-import * as components from 'components';
+import * as components from '@cergmin/components';
 
 interface DocsPageProps {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -31,6 +32,21 @@ const mdxComponents = {
     <Example {...props} className={s.example} />
   ),
   code: Code,
+  a: ({
+    children,
+    href,
+    target,
+  }: {
+    children: ReactNode;
+    href: string;
+    target?: HTMLAttributeAnchorTarget;
+  }) => (
+    <Link href={href}>
+      <a className={s.link} target={target} rel="noopener noreferrer">
+        {children}
+      </a>
+    </Link>
+  ),
 };
 
 function DocsPage({
