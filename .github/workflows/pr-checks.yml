@@ -45,11 +45,7 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: Installing docs dependencies
         run: cd docs && pnpm i --frozen-lockfile
-      - name: Installing examples dependencies
-        run: cd examples && pnpm i --frozen-lockfile
       - name: Building library
         run: pnpm build
       - name: Building docs
         run: pnpm build:docs
-      - name: Building examples
-        run: pnpm build:examples
