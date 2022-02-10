@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
+import { Button } from '@cergmin/components';
 import s from './Intro.module.css';
 
 interface IntroProps {
@@ -12,16 +13,13 @@ const Intro = ({ className }: IntroProps) => {
       <h1 className={s.title}>Components</h1>
       <p className={s.description}>Library of React components.</p>
       <div className={s.buttonList}>
-        <Link href="/docs/getting-started/introduction/">
-          <a className={s.button}>Get started</a>
+        <Link href="/docs/getting-started/introduction/" passHref>
+          <Button className={s.button}>Get started</Button>
         </Link>
-        <Link href="https://github.com/cergmin/components">
-          <a
-            className={clsx(s.button, s.secondary)}
-            target="_blank"
-            rel="noopener noreferrer">
+        <Link href="https://github.com/cergmin/components" passHref>
+          <Button className={s.button} appearance="secondary" target="_blank">
             GitHub
-          </a>
+          </Button>
         </Link>
       </div>
     </section>
