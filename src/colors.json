@@ -178,6 +178,10 @@
     "paletteName": "blue",
     "swatches": [
       {
+        "name": "cmp-blue-950",
+        "color": "000F47"
+      },
+      {
         "name": "cmp-blue-900",
         "color": "00175C"
       },
