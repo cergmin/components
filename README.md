@@ -37,17 +37,17 @@ Follow these steps to run the project locally:
 1. Go back to the root.
 
 ## Scripts
-`start:docs` — run next.js server with documentation<br>
-`build` — build library<br>
-`build:docs` — build documentation with next.js<br>
-`build:examples` — build examples<br>
-`build:all` — build library and examples<br>
-`watch` — run library building in watch mode<br>
-`watch:docs` — run documentation (next.js) in dev mode<br>
-`watch:tests` — run unit testing in watch mode<br>
-`test` — run unit tests<br>
-`coverage` — generate coverage report<br>
-`fix` — fix code with prettier, eslint and stylelint<br>
+`start` — build library and docs, then run next.js server with documentation<br/>
+`start:docs` — run next.js server with documentation (you need to run `pnpm build:docs` before)<br/>
+`build` — build library<br/>
+`build:docs` — build documentation with next.js<br/>
+`build:all` — build library and examples<br/>
+`watch` — run library building in watch mode<br/>
+`watch:docs` — run documentation (next.js) in dev mode<br/>
+`watch:test` — run unit testing in watch mode<br/>
+`test` — run unit tests<br/>
+`coverage` — generate coverage report<br/>
+`fix` — fix code with prettier, eslint and stylelint<br/>
 
 ## Components
-- SimpleButton
+- [Button](https://components-cergmin.vercel.app/docs/components/button)
