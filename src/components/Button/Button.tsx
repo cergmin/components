@@ -82,6 +82,7 @@ export const Button = ({
         s[appearanceClassName],
         s[sizeClassName],
         loading && s.loading,
+        disabled && s.disabled,
         className,
       )}
       type={type}

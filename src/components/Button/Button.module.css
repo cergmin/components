@@ -40,11 +40,11 @@
     }
   }
 
-  &:active {
+  &:active:not(.disabled) {
     transform: scale(0.97);
   }
 
-  &:focus-visible {
+  &:focus-visible:not(.disabled) {
     outline: 2px solid var(--cmp-blue-800);
     outline-offset: 1px;
   }
@@ -91,11 +91,11 @@
       background-color: var(--cmp-blue-500);
       color: var(--cmp-white);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background-color: var(--cmp-blue-550);
       }
 
-      &:active {
+      &:active:not(.disabled) {
         background-color: var(--cmp-blue-600);
       }
     }
@@ -105,11 +105,11 @@
       background-color: var(--cmp-white);
       color: var(--cmp-black);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background-color: var(--cmp-gray-100);
       }
 
-      &:active {
+      &:active:not(.disabled) {
         background-color: var(--cmp-gray-200);
       }
     }
@@ -119,11 +119,11 @@
       background-color: var(--cmp-green-500);
       color: var(--cmp-white);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background-color: var(--cmp-green-550);
       }
 
-      &:active {
+      &:active:not(.disabled) {
         background-color: var(--cmp-green-600);
       }
 
@@ -137,11 +137,11 @@
       background-color: var(--cmp-red-500);
       color: var(--cmp-white);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background-color: var(--cmp-red-550);
       }
 
-      &:active {
+      &:active:not(.disabled) {
         background-color: var(--cmp-red-600);
       }
 
@@ -155,11 +155,11 @@
       background-color: var(--cmp-yellow-450);
       color: var(--cmp-black);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background-color: var(--cmp-yellow-500);
       }
 
-      &:active {
+      &:active:not(.disabled) {
         background-color: var(--cmp-yellow-550);
       }
 
@@ -174,27 +174,21 @@
       color: var(--cmp-blue-750);
       cursor: pointer;
 
-      &:hover {
+      &:hover:not(.disabled) {
         text-decoration: underline;
       }
 
-      &:active {
+      &:active:not(.disabled) {
         color: var(--cmp-blue-900);
         transform: none;
       }
     }
   }
 
-  &:disabled,
   &.disabled {
-    &,
-    &:hover,
-    &:active {
-      cursor: default;
-      filter: grayscale(0.5);
-      opacity: 0.4;
-      transform: none;
-    }
+    cursor: default;
+    filter: grayscale(0.5);
+    opacity: 0.55;
   }
 
   &.loading::before {
