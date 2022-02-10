@@ -23,10 +23,10 @@
     "components"
   ],
   "scripts": {
+    "start": "pnpm build:all && pnpm start:docs",
     "start:docs": "cd docs && pnpm start",
     "build": "rollup -c",
     "build:docs": "cd docs && pnpm build",
-    "build:examples": "cd examples && pnpm build",
     "build:all": "npm-run-all build build:docs build:examples",
     "watch": "rollup -c -w",
     "watch:docs": "cd docs && pnpm dev",
