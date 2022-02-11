@@ -1,6 +1,8 @@
 .code {
+    max-width: 100%;
     padding: 1rem 0;
     border-radius: 5px;
+    overflow-x: auto;
 }
 
 .code code {

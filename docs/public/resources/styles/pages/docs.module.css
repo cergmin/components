@@ -59,7 +59,7 @@
 
 @media all and (max-width: 900px) {
     .layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
     
     .nav {
