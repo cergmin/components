@@ -69,6 +69,7 @@
 
 .propsTableWrapper {
     width: 100%;
+    margin-bottom: 7px; /* .demo border-radius = 7px */
     overflow-x: auto;
 }
 
@@ -133,4 +134,36 @@
 .selectInput:focus-visible {
     outline: 2px solid var(--base-outline);
     outline-offset: 1px;
+}
+
+@media (max-width: 768px) {
+    .propsTable thead {
+        display: none;
+    }
+
+    .propsTable tr {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    .propsTable td,
+    .propsTable td:first-child,
+    .propsTable td:last-child {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+    }
+
+    .propsTable tr:first-child {
+        padding-top: 0;
+    }
+
+    .propsTable td:before {
+        display: block;
+        width: 5rem;
+        flex-shrink: 0;
+        content: attr(data-column);
+        font-weight: 500;
+    }
 }
