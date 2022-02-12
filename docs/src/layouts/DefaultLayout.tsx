@@ -107,7 +107,27 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
         <meta name="description" content="Library of React components" />
         <meta name="robots" content="index, follow" />
         <meta name="color-scheme" content="light" />
+        <link rel="manifest" href="/manifest.webmanifest" />
         <title>Components</title>
+
+        <link
+          rel="icon"
+          href="/resources/images/favicons/favicon.ico"
+          sizes="any"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/resources/images/favicons/180x180_maskable.png"
+        />
+        <link
+          rel="icon"
+          href="/resources/images/favicons/favicon.svg"
+          type="image/svg+xml"
+        />
+        <meta
+          name="yandex-tableau-widget"
+          content="logo=/resources/images/favicons/512x512.png, color=#024fbf"
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -120,32 +140,12 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
           rel="stylesheet"
         />
 
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="120x120"
-          href="/resources/images/favicons/favicon-120x120.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/resources/images/favicons/android-icon-192x192.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/resources/images/favicons/apple-touch-icon-180x180.png"
-        />
-        <link
-          rel="mask-icon"
-          color="#0f7bff"
-          href="/resources/images/favicons/safari-pinned-tab.svg"
-        />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="/resources/images/favicons/any.svg"
+        <meta property="og:title" content="Components" />
+        <meta property="og:description" content="Library of React components"/>
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content="https://components-cergmin.vercel.app/"
         />
       </Head>
       <Header
