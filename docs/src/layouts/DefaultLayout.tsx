@@ -107,18 +107,8 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
         <meta name="description" content="Library of React components" />
         <meta name="robots" content="index, follow" />
         <meta name="color-scheme" content="light" />
+        <link rel="manifest" href="/manifest.webmanifest" />
         <title>Components</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap"
-          rel="stylesheet"
-        />
 
         <link
           rel="icon"
@@ -138,7 +128,25 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
           name="yandex-tableau-widget"
           content="logo=/resources/images/favicons/512x512.png, color=#024fbf"
         />
-        <link rel="manifest" href="/manifest.webmanifest" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+          rel="stylesheet"
+        />
+
+        <meta property="og:title" content="Components" />
+        <meta property="og:description" content="Library of React components"/>
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content="https://components-cergmin.vercel.app/"
+        />
       </Head>
       <Header
         logoUrl={'/resources/images/logo.svg'}
