@@ -122,31 +122,23 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
 
         <link
           rel="icon"
-          type="image/png"
-          sizes="120x120"
-          href="/resources/images/favicons/favicon-120x120.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/resources/images/favicons/android-icon-192x192.png"
+          href="/resources/images/favicons/favicon.ico"
+          sizes="any"
         />
         <link
           rel="apple-touch-icon"
-          sizes="180x180"
-          href="/resources/images/favicons/apple-touch-icon-180x180.png"
-        />
-        <link
-          rel="mask-icon"
-          color="#0f7bff"
-          href="/resources/images/favicons/safari-pinned-tab.svg"
+          href="/resources/images/favicons/180x180_maskable.png"
         />
         <link
           rel="icon"
+          href="/resources/images/favicons/favicon.svg"
           type="image/svg+xml"
-          href="/resources/images/favicons/any.svg"
         />
+        <meta
+          name="yandex-tableau-widget"
+          content="logo=/resources/images/favicons/512x512.png, color=#024fbf"
+        />
+        <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
       <Header
         logoUrl={'/resources/images/logo.svg'}
