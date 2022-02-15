@@ -108,6 +108,7 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
         <meta name="robots" content="index, follow" />
         <meta name="color-scheme" content="light" />
         <meta name="yandex-verification" content="50566accce767407" />
+        <meta name="google-site-verification" content="dCAFwobYNyJYou-lprvtQDVL5iZZ_kVjew9FjhW75Y8" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <title>Components</title>
 
