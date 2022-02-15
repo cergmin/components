@@ -107,6 +107,7 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
         <meta name="description" content="Library of React components" />
         <meta name="robots" content="index, follow" />
         <meta name="color-scheme" content="light" />
+        <meta name="yandex-verification" content="50566accce767407" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <title>Components</title>
 
