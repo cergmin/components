@@ -14,10 +14,16 @@ const Intro = ({ className }: IntroProps) => {
       <p className={s.description}>Library of React components.</p>
       <div className={s.buttonList}>
         <Link href="/docs/getting-started/introduction/" passHref>
-          <Button className={s.button}>Get started</Button>
+          <Button className={s.button} size="large">
+            Get started
+          </Button>
         </Link>
         <Link href="https://github.com/cergmin/components" passHref>
-          <Button className={s.button} appearance="secondary" target="_blank">
+          <Button
+            className={s.button}
+            size="large"
+            appearance="secondary"
+            target="_blank">
             GitHub
           </Button>
         </Link>

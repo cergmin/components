@@ -199,11 +199,11 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
 
               return (
                 <tr key={prop.key}>
-                  <td>
+                  <td data-column="Name">
                     {propName}
                     {propNameSuffix}
                   </td>
-                  <td>
+                  <td data-column="Type">
                     <SyntaxHighlighter
                       className={s.propType}
                       language="tsx"
@@ -212,8 +212,8 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
                       {prop.tsType}
                     </SyntaxHighlighter>
                   </td>
-                  <td>{prop.defaultValue}</td>
-                  <td>{valueEditor}</td>
+                  <td data-column="Default">{prop.defaultValue}</td>
+                  <td data-column="Value">{valueEditor}</td>
                 </tr>
               );
             })}

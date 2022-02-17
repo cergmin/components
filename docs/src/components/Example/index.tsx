@@ -8,9 +8,7 @@ export interface IExmapleProps {
 }
 
 const Exmaple = ({ className, children }: IExmapleProps) => {
-  return <div className={clsx(s.example, className)}>
-    {children}
-  </div>;
+  return <div className={clsx(s.example, className)}>{children}</div>;
 };
 
 export default Exmaple;

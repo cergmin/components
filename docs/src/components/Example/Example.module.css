@@ -1,11 +1,12 @@
 .example {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border: 1px solid var(--gray-400);
-    background-color: var(--gray-75);
-    border-radius: 7px;
-    gap: 1rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid var(--gray-400);
+  background-color: var(--gray-75);
+  border-radius: 7px;
+  gap: 1rem;
 }
