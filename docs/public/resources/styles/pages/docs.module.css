@@ -1,15 +1,20 @@
 .layout {
-    display: grid;
+    display: flex;
     width: 100%;
     margin-top: 3rem;
     column-gap: 1.5rem;
-    grid-template-columns: auto 1fr;
 }
 
 .nav {
     position: sticky;
     top: 1.5rem;
+    width: 175px;
     height: fit-content;
+    flex-shrink: 0;
+}
+
+.content {
+    width: calc(100% - 175px - 1.5rem);
 }
 
 .content h1{
@@ -57,9 +62,9 @@
     margin-bottom: 1rem;
 }
 
-@media all and (max-width: 900px) {
-    .layout {
-        grid-template-columns: 100%;
+@media all and (max-width: 768px) {
+    .content {
+        width: 100%;
     }
     
     .nav {

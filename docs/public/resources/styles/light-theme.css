@@ -3,6 +3,8 @@
     --header-background: var(--blue-650);
     --code-background: var(--black);
 
+    --header-color: var(--white);
+
     --base-color: var(--gray-900);
     --faint-color: var(--gray-700);
     --accent-color: var(--blue-700);

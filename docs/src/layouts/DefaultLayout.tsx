@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from '@/components/Header';
+import { ISidebarItems } from '@/components/SidebarNav';
 import Footer from '@/components/Footer';
 
 export interface DefaultLayoutProps {
@@ -23,17 +24,47 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
       url: '/docs/getting-started/introduction',
       urlPathname: '/docs',
     },
-    {
-      text: 'Examples',
-      url: '/examples',
-      urlPathname: '/examples',
-    },
   ];
 
   const iconLinks = [
     {
       icon: '/resources/images/github.svg',
       url: 'https://github.com/cergmin/components',
+    },
+  ];
+
+  const sidebarItems: ISidebarItems = [
+    {
+      type: 'link',
+      title: 'Home',
+      url: '/',
+    },
+    {
+      type: 'group',
+      title: 'Getting Started',
+      items: [
+        {
+          type: 'link',
+          title: 'Introduction',
+          url: '/docs/getting-started/introduction',
+        },
+        {
+          type: 'link',
+          title: 'Contribute',
+          url: '/docs/getting-started/contribute',
+        },
+      ],
+    },
+    {
+      type: 'group',
+      title: 'Components',
+      items: [
+        {
+          type: 'link',
+          title: 'Button',
+          url: '/docs/components/button',
+        },
+      ],
     },
   ];
 
@@ -152,7 +183,8 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
         logoUrl={'/resources/images/logo.svg'}
         navLinks={navLinks}
         iconLinks={iconLinks}
-        currentPathname={router.pathname}
+        sidebarItems={sidebarItems}
+        currentPathname={router.asPath}
       />
       {children}
       <Footer columns={footerColumns} libVersion={libVersion} />

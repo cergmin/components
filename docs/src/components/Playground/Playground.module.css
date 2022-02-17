@@ -123,6 +123,7 @@
 
 .textInput,
 .selectInput {
+    width: 120px;
     padding: 0.25rem 0.5rem;
     border: 1px solid hsl(213deg 20% 65%);
     background-color: hsl(213deg 15% 94%);
@@ -165,5 +166,11 @@
         flex-shrink: 0;
         content: attr(data-column);
         font-weight: 500;
+    }
+
+    .textInput,
+    .selectInput {
+        width: 100%;
+        max-width: 250px;
     }
 }
