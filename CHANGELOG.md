@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.2.0
+* Added **&lt;Button&gt;** component
+  - Appearances (primary, secondary, success, warning, danger, link)
+  - Sizes (small, medium, large)
+  - Using &lt;a&gt; tag if the href parameter is passed
+  - Disabled state
+  - Loading state
+  - onClick event
+* Added tests for **&lt;Button&gt;** component
+* Added mobile version for [documentation](http://components-cergmin.vercel.app/)
+  - Mobile version for props table
+  - Sidebar with navigation
+
 ## 0.1.3
 * Added [documentation](http://components-cergmin.vercel.app/)
 * Added clean-publish and prepublish script
