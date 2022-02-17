@@ -55,17 +55,7 @@
     color: var(--accent-color);
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-      text-align: center;
-  }
-}
-
 @media screen and (max-width: 480px) {
-    .title {
-      text-align: initial;
-    }
-
     .list {
         column-gap: 1.5rem;
     }

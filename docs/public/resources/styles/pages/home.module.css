@@ -25,19 +25,9 @@
   .install {
     width: 100%;
     max-width: 28rem;
-    justify-self: center;
-    text-align: center;
   }
 
   .showcase {
     grid-column: 1 / 2;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .intro,
-  .install {
-    justify-self: auto;
-    text-align: initial;
   }
 }
