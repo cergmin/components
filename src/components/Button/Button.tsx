@@ -51,43 +51,35 @@ export const Button = ({
   const sizeClassName =
     'size' + size[0].toUpperCase() + size.slice(1).toLowerCase();
 
+  const componentProps = {
+    id: id,
+    className: clsx(
+      s.button,
+      s[appearanceClassName],
+      s[sizeClassName],
+      loading && s.loading,
+      disabled && s.disabled,
+      className,
+    ),
+    tabIndex: disabled ? -1 : undefined,
+    'aria-disabled': disabled,
+    onClick: disabled || loading ? undefined : onClick,
+  };
+
   if (href) {
     return (
       <a
-        id={id}
-        className={clsx(
-          s.button,
-          s[appearanceClassName],
-          s[sizeClassName],
-          loading && s.loading,
-          disabled && s.disabled,
-          className,
-        )}
+        {...componentProps}
         href={disabled ? undefined : href}
         target={target}
-        rel="noopener noreferrer"
-        tabIndex={disabled ? -1 : undefined}
-        aria-disabled={disabled}
-        onClick={onClick}>
+        rel="noopener noreferrer">
         {buttonContent}
       </a>
     );
   }
 
   return (
-    <button
-      id={id}
-      className={clsx(
-        s.button,
-        s[appearanceClassName],
-        s[sizeClassName],
-        loading && s.loading,
-        disabled && s.disabled,
-        className,
-      )}
-      type={type}
-      disabled={disabled}
-      onClick={onClick}>
+    <button {...componentProps} type={type} disabled={disabled}>
       {buttonContent}
     </button>
   );
