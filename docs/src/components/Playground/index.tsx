@@ -4,12 +4,15 @@ import React, {
   isValidElement,
   ReactNode,
   useEffect,
+  useRef,
   useState,
+  MouseEventHandler,
 } from 'react';
 import clsx from 'clsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import Checkbox from '@/components/Checkbox';
 import highlightStyle from '@/resources/styles/highlight/light.js';
+import { throttle } from '@/utilities/throttle';
 import s from './Playground.module.css';
 
 interface IComponentPropCommon {
@@ -54,6 +57,12 @@ interface IPlaygroundProps {
 
 const Playground = ({ children, props }: IPlaygroundProps) => {
   const [childComponentsProps, setChildComponentsProps] = useState({});
+  const [demoContentWidth, setDemoContentWidth] = useState<number>();
+  const [isDemoResizing, setIsDemoResizing] = useState(false);
+  const [startDemoResizePos, setStartDemoResizePos] = useState(0);
+  const [startDemoWidth, setStartDemoWidth] = useState(0);
+  const demoContentRef = useRef<HTMLDivElement>(null);
+  const demoResizerRef = useRef<HTMLDivElement>(null);
 
   const updateChildComponentsProp = (key: string, value: any) => {
     setChildComponentsProps((state) => ({
@@ -61,6 +70,57 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
       [key]: value,
     }));
   };
+
+  const pointerDownResizerHandler: MouseEventHandler<HTMLDivElement> = (e) => {
+    setIsDemoResizing(true);
+    setStartDemoResizePos(e.clientX);
+    setStartDemoWidth(demoContentWidth);
+  };
+
+  const pointerUpResizerHandler = () => {
+    if (isDemoResizing) {
+      setIsDemoResizing(false);
+      setDemoContentWidth(demoContentRef.current.offsetWidth);
+    }
+  };
+
+  const pointerMoveResizerHandler = (e: MouseEvent) => {
+    if (!isDemoResizing) {
+      return;
+    }
+
+    const positionXOffset = e.clientX - startDemoResizePos;
+
+    demoContentRef.current.style.width = `${
+      startDemoWidth + positionXOffset
+    }px`;
+    demoResizerRef.current.querySelector('span').innerText =
+      demoContentRef.current.clientWidth.toString();
+  };
+
+  const windowResizeHandler = throttle(() => {
+    setDemoContentWidth(demoContentRef.current.offsetWidth);
+  }, 100);
+
+  useEffect(() => {
+    if (!demoContentRef || !demoResizerRef) {
+      return;
+    }
+
+    setDemoContentWidth(demoContentRef.current.offsetWidth);
+  }, [demoContentRef, demoResizerRef]);
+
+  useEffect(() => {
+    document.addEventListener('pointerup', pointerUpResizerHandler);
+    document.addEventListener('pointermove', pointerMoveResizerHandler);
+    window.addEventListener('resize', windowResizeHandler);
+
+    return () => {
+      document.removeEventListener('pointerup', pointerUpResizerHandler);
+      document.removeEventListener('pointermove', pointerMoveResizerHandler);
+      window.removeEventListener('resize', windowResizeHandler);
+    };
+  }, [isDemoResizing]);
 
   useEffect(() => {
     props = props || [];
@@ -105,9 +165,17 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
   return (
     <div className={s.playground}>
       <div className={s.demo}>
-        <div className={s.demoContent}>{childrenWithProps}</div>
-        <div className={s.demoResizer}>
-          <span className={s.demoResizerText}>757</span>
+        <div
+          className={s.demoContent}
+          style={{ width: demoContentWidth }}
+          ref={demoContentRef}>
+          {childrenWithProps}
+        </div>
+        <div
+          className={s.demoResizer}
+          ref={demoResizerRef}
+          onPointerDown={pointerDownResizerHandler}>
+          <span className={s.demoResizerText}>{demoContentWidth}</span>
         </div>
       </div>
       <div className={s.propsTableWrapper}>

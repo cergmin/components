@@ -10,26 +10,30 @@
     z-index: 5;
     top: 1.5rem;
     display: flex;
-    /* width: fit-content; */
+    width: fit-content;
+    max-width: 100%;
     border: 1px solid var(--gray-400);
     background-color: var(--gray-75);
     border-radius: 7px;
 }
 
 .demoContent {
-    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    min-width: min-content;
     flex-grow: 1;
     padding: 1rem;
-    gap: 1rem;
 }
 
 .demoResizer {
     position: relative;
     display: flex;
     width: 45px;
+    flex-shrink: 0;
     align-items: center;
     border-left: 1px solid var(--gray-400);
     cursor: col-resize;
+    touch-action: none;
     user-select: none;
 }
 
