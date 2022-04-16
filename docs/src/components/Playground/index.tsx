@@ -224,7 +224,19 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
 
               switch (prop.valueEditor) {
                 case 'noEdit':
-                  valueEditor = `${childComponentsProps[propName]}`;
+                  valueEditor = (
+                    <SyntaxHighlighter
+                      className={s.propType}
+                      language="json"
+                      style={highlightStyle}
+                      wrapLongLines>
+                      {JSON.stringify(
+                        childComponentsProps[propName],
+                        null,
+                        '  ',
+                      ) ?? ''}
+                    </SyntaxHighlighter>
+                  );
                   break;
 
                 case 'boolean':

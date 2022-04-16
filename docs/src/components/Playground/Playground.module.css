@@ -12,7 +12,7 @@
     display: flex;
     width: fit-content;
     max-width: 100%;
-    min-height: 175px;
+    min-height: 200px;
     max-height: 25vh;
     border: 1px solid var(--gray-400);
     background-color: var(--gray-75);
