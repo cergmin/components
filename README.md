@@ -51,3 +51,4 @@ Follow these steps to run the project locally:
 
 ## Components
 - [Button](https://components-cergmin.vercel.app/docs/components/button)
+- [PieChart](https://components-cergmin.vercel.app/docs/components/pie-chart)
