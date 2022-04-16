@@ -1,0 +1,252 @@
+---
+title: PieChart
+source: 'https://github.com/cergmin/components/blob/main/src/components/PieChart/PieChart.tsx'
+---
+
+## Props
+
+<Playground
+  props={[
+    {
+      key: 'data',
+      tsType: `{
+  value: number;
+  title?: string;
+}[]`,
+      valueEditor: 'noEdit',
+      value: [
+        { title: 'React', value: 62 },
+        { title: 'Svelte', value: 58 },
+        { title: 'Angular', value: 32 },
+        { title: 'jQuery', value: 30 },
+      ],
+    },
+    {
+      key: 'radius?',
+      tsType: 'number',
+      valueEditor: 'number',
+      defaultValue: 100,
+      value: 100,
+    },
+    {
+      key: 'rotation?',
+      tsType: 'number',
+      valueEditor: 'number',
+      defaultValue: 0,
+      value: 0,
+    },
+    {
+      key: 'theme?',
+      tsType: '{ fill: string; }[]',
+      valueEditor: 'namedSelect',
+      defaultValue: 'bluePieChartTheme',
+      value: [
+        [
+          'bluePieChartTheme',
+          [
+            { fill: 'var(--cmp-blue-900)' },
+            { fill: 'var(--cmp-blue-750)' },
+            { fill: 'var(--cmp-blue-500)' },
+            { fill: 'var(--cmp-blue-350)' },
+          ],
+        ],
+        [
+          'greenPieChartTheme',
+          [
+            { fill: 'var(--cmp-green-900)' },
+            { fill: 'var(--cmp-green-750)' },
+            { fill: 'var(--cmp-green-500)' },
+            { fill: 'var(--cmp-green-350)' },
+          ],
+        ],
+        [
+          'rainbowPieChartTheme',
+          [
+            { fill: 'var(--cmp-red-500)' },
+            { fill: 'var(--cmp-orange-500)' },
+            { fill: 'var(--cmp-yellow-500)' },
+            { fill: 'var(--cmp-green-500)' },
+            { fill: 'var(--cmp-cyan-500)' },
+            { fill: 'var(--cmp-blue-500)' },
+            { fill: 'var(--cmp-purple-500)' },
+          ],
+        ],
+      ],
+    },
+    {
+      key: 'gap?',
+      tsType: 'number',
+      valueEditor: 'number',
+      defaultValue: 1,
+      value: 1,
+    },
+    {
+      key: 'pieWidth?',
+      tsType: 'number',
+      valueEditor: 'number',
+      defaultValue: 35,
+      value: 35,
+    },
+  ]}>
+  <PieChart />
+</Playground>
+
+## Examples
+
+### Different themes
+
+You can import some themes from the library or create a new one.
+
+Available themes:
+
+- `bluePieChartTheme`
+- `greenPieChartTheme`
+- `rainbowPieChartTheme`
+
+<Example>
+  <PieChart
+    theme={[
+      { fill: 'var(--cmp-blue-900)' },
+      { fill: 'var(--cmp-blue-750)' },
+      { fill: 'var(--cmp-blue-500)' },
+      { fill: 'var(--cmp-blue-350)' },
+    ]}
+    data={[
+      { title: 'Apple', value: 274 },
+      { title: 'Samsung', value: 200 },
+      { title: 'Google', value: 182 },
+      { title: 'Foxconn', value: 181 },
+      { title: 'Microsoft', value: 143 },
+      { title: 'Huawei', value: 129 },
+      { title: 'Facebook', value: 85 },
+    ]}
+  />
+  <PieChart
+    theme={[
+      { fill: 'var(--cmp-green-900)' },
+      { fill: 'var(--cmp-green-750)' },
+      { fill: 'var(--cmp-green-500)' },
+      { fill: 'var(--cmp-green-350)' },
+    ]}
+    data={[
+      { title: 'Apple', value: 274 },
+      { title: 'Samsung', value: 200 },
+      { title: 'Google', value: 182 },
+      { title: 'Foxconn', value: 181 },
+      { title: 'Microsoft', value: 143 },
+      { title: 'Huawei', value: 129 },
+      { title: 'Facebook', value: 85 },
+    ]}
+  />
+  <PieChart
+    theme={[
+      { fill: 'var(--cmp-red-500)' },
+      { fill: 'var(--cmp-orange-500)' },
+      { fill: 'var(--cmp-yellow-500)' },
+      { fill: 'var(--cmp-green-500)' },
+      { fill: 'var(--cmp-cyan-500)' },
+      { fill: 'var(--cmp-blue-500)' },
+      { fill: 'var(--cmp-purple-500)' },
+    ]}
+    data={[
+      { title: 'Apple', value: 274 },
+      { title: 'Samsung', value: 200 },
+      { title: 'Google', value: 182 },
+      { title: 'Foxconn', value: 181 },
+      { title: 'Microsoft', value: 143 },
+      { title: 'Huawei', value: 129 },
+      { title: 'Facebook', value: 85 },
+    ]}
+  />
+</Example>
+
+```javascript
+import {
+  PieChart,
+  bluePieChartTheme,
+  greenPieChartTheme,
+  rainbowPieChartTheme
+} from '@cergmin/components';
+
+const largestCompanies2021 = [
+  { title: 'Apple', value: 274 },
+  { title: 'Samsung', value: 200 },
+  { title: 'Google', value: 182 },
+  { title: 'Foxconn', value: 181 },
+  { title: 'Microsoft', value: 143 },
+  { title: 'Huawei', value: 129 },
+  { title: 'Facebook', value: 85 },
+];
+
+<PieChart
+  theme={bluePieChartTheme}
+  data={largestCompanies2021}
+/>
+<PieChart
+  theme={greenPieChartTheme}
+  data={largestCompanies2021}
+/>
+<PieChart
+  theme={rainbowPieChartTheme}
+  data={largestCompanies2021}
+/>
+```
+
+### Custom theme
+
+Theme is an array of objects.
+Each object describes the appearance of one segment of a pie chart,
+so you can create you own theme.
+
+An object that describes the appearance of a segment should have these properties:
+
+- `fill` — background of a segment
+
+<Example>
+  <PieChart
+    theme={[
+      { fill: '#002533' },
+      { fill: 'rgb(0, 95, 115)' },
+      { fill: 'hsl(181deg, 86%, 32%)' },
+      { fill: 'orange' },
+      { fill: `#bb3e03` },
+      { fill: `#ae2012` },
+      { fill: `#9b2226` },
+    ]}
+    data={[
+      { title: 'Apple', value: 274 },
+      { title: 'Samsung', value: 200 },
+      { title: 'Google', value: 182 },
+      { title: 'Foxconn', value: 181 },
+      { title: 'Microsoft', value: 143 },
+      { title: 'Huawei', value: 129 },
+      { title: 'Facebook', value: 85 },
+    ]}
+  />
+</Example>
+
+```javascript
+import { PieChart } from '@cergmin/components';
+
+const customTheme = [
+  { fill: '#002533' },
+  { fill: 'rgb(0, 95, 115)' },
+  { fill: 'hsl(181deg, 86%, 32%)' },
+  { fill: 'orange' },
+  { fill: `#bb3e03` },
+  { fill: `#ae2012` },
+  { fill: `#9b2226` },
+];
+
+const largestCompanies2021 = [
+  { title: 'Apple', value: 274 },
+  { title: 'Samsung', value: 200 },
+  { title: 'Google', value: 182 },
+  { title: 'Foxconn', value: 181 },
+  { title: 'Microsoft', value: 143 },
+  { title: 'Huawei', value: 129 },
+  { title: 'Facebook', value: 85 },
+];
+
+<PieChart theme={customTheme} data={largestCompanies2021} />;
+```

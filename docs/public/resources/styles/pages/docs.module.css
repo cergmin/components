@@ -58,6 +58,10 @@
     margin-bottom: 0.25rem;
 }
 
+.content code {
+    font-family: var(--ff-code, monospace);
+}
+
 .content .example {
     margin-bottom: 1rem;
 }
