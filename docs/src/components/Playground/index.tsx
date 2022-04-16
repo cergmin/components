@@ -49,12 +49,18 @@ interface IComponentPropSelect extends IComponentPropCommon {
   value: any[];
 }
 
+interface IComponentPropNamedSelect extends IComponentPropCommon {
+  valueEditor: 'namedSelect';
+  value: [string, any][];
+}
+
 type IComponentProp =
   | IComponentPropNoEdit
   | IComponentPropBoolean
   | IComponentPropString
   | IComponentPropNumber
-  | IComponentPropSelect;
+  | IComponentPropSelect
+  | IComponentPropNamedSelect;
 
 interface IPlaygroundProps {
   children: ReactNode;
@@ -141,7 +147,7 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
           propName = propName.slice(0, -1);
         }
 
-        if (prop.valueEditor.endsWith('select') && Array.isArray(prop.value)) {
+        if (prop.valueEditor === 'select' && Array.isArray(prop.value)) {
           prop.selectedValueIndex = prop.value.indexOf(prop.defaultValue);
 
           prop.selectedValueIndex =
@@ -150,6 +156,23 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
           newState[propName] =
             prop.value.length > 0
               ? prop.value[prop.selectedValueIndex]
+              : undefined;
+        } else if (
+          prop.valueEditor === 'namedSelect' &&
+          Array.isArray(prop.value)
+        ) {
+          prop.selectedValueIndex = 0;
+
+          for (let i = 0; i < prop.value.length; i++) {
+            if (prop.value[i].includes(prop.defaultValue)) {
+              prop.selectedValueIndex = i;
+              break;
+            }
+          }
+
+          newState[propName] =
+            prop.value.length > 0
+              ? prop.value[prop.selectedValueIndex][1]
               : undefined;
         } else {
           newState[propName] = prop.value;
@@ -292,6 +315,28 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
                       {prop.value.map((value, i) => (
                         <option key={i} value={i}>
                           {`${value}`}
+                        </option>
+                      ))}
+                    </select>
+                  );
+                  break;
+
+                case 'namedSelect':
+                  valueEditor = (
+                    <select
+                      className={s.selectInput}
+                      value={prop.selectedValueIndex}
+                      onChange={(e) => {
+                        const index = parseInt(e.target.value);
+                        prop.selectedValueIndex = index;
+                        updateChildComponentsProp(
+                          propName,
+                          prop.value[index][1],
+                        );
+                      }}>
+                      {prop.value.map((value, i) => (
+                        <option key={value[0]} value={i}>
+                          {`${value[0]}`}
                         </option>
                       ))}
                     </select>

@@ -12,8 +12,7 @@
     display: flex;
     width: fit-content;
     max-width: 100%;
-    min-height: 200px;
-    max-height: 25vh;
+    max-height: max(200px, 25vh);
     border: 1px solid var(--gray-400);
     background-color: var(--gray-75);
     border-radius: 7px;
@@ -129,7 +128,7 @@
 
 .textInput,
 .selectInput {
-    width: 120px;
+    width: 150px;
     padding: 0.25rem 0.5rem;
     border: 1px solid hsl(213deg 20% 65%);
     background-color: hsl(213deg 15% 94%);
