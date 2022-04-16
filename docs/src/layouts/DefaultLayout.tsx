@@ -64,6 +64,11 @@ function DefaultLayout({ children, libVersion }: DefaultLayoutProps) {
           title: 'Button',
           url: '/docs/components/button',
         },
+        {
+          type: 'link',
+          title: 'PieChart',
+          url: '/docs/components/pie-chart',
+        },
       ],
     },
   ];
