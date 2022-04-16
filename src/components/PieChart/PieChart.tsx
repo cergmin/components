@@ -78,10 +78,10 @@ export const PieChart = ({
 }: PieChartProps) => {
   // Setting defaults
   theme = theme ?? bluePieChartTheme;
-  radius = radius ?? 250;
+  radius = radius ?? 100;
   rotation = rotation ?? 0;
   gap = gap ?? 1;
-  pieWidth = pieWidth ?? 75;
+  pieWidth = pieWidth ?? 35;
 
   // Correct settings
   radius = Math.max(0, radius);
@@ -119,9 +119,7 @@ export const PieChart = ({
     <svg
       id={id}
       className={clsx(s.pieChart, className)}
-      viewBox={`${-radius} ${-radius} ${radius * 2} ${radius * 2}`}
-      width={radius * 2}
-      height={radius * 2}>
+      viewBox={`${-radius} ${-radius} ${radius * 2} ${radius * 2}`}>
       {pies.map((pie) => pie)}
     </svg>
   );

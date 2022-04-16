@@ -11,18 +11,21 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/PieChart
       key: 'radius',
       tsType: 'number',
       valueEditor: 'number',
-      value: 250,
+      defaultValue: 100,
+      value: 100,
     },
     {
       key: 'rotation',
       tsType: 'number',
       valueEditor: 'number',
+      defaultValue: 0,
       value: 0,
     },
     {
       key: 'theme',
       tsType: "{ fill: string; }[]",
       valueEditor: 'select',
+      defaultValue: 'bluePieChartTheme',
       value: [
         [
           { fill: 'var(--cmp-blue-900)' },
@@ -51,13 +54,15 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/PieChart
       key: 'gap',
       tsType: 'number',
       valueEditor: 'number',
+      defaultValue: 1,
       value: 1,
     },
     {
       key: 'pieWidth',
       tsType: 'number',
       valueEditor: 'number',
-      value: 75,
+      defaultValue: 35,
+      value: 35,
     },
   ]}>
   <PieChart
@@ -68,6 +73,7 @@ source: 'https://github.com/cergmin/components/blob/main/src/components/PieChart
       { title: 'Ciao', value: 8 },
       { title: 'Salve', value: 4 },
       { title: 'Tere', value: 2 },
+      { title: 'Здоров', value: 1 },
     ]}
   />
 </Playground>
