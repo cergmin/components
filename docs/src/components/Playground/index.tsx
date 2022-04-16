@@ -39,6 +39,11 @@ interface IComponentPropString extends IComponentPropCommon {
   value: string;
 }
 
+interface IComponentPropNumber extends IComponentPropCommon {
+  valueEditor: 'number';
+  value: number;
+}
+
 interface IComponentPropSelect extends IComponentPropCommon {
   valueEditor: 'select';
   value: any[];
@@ -48,6 +53,7 @@ type IComponentProp =
   | IComponentPropNoEdit
   | IComponentPropBoolean
   | IComponentPropString
+  | IComponentPropNumber
   | IComponentPropSelect;
 
 interface IPlaygroundProps {
@@ -240,6 +246,22 @@ const Playground = ({ children, props }: IPlaygroundProps) => {
                       value={childComponentsProps[propName]}
                       onChange={(e) =>
                         updateChildComponentsProp(propName, e.target.value)
+                      }
+                    />
+                  );
+                  break;
+
+                case 'number':
+                  valueEditor = (
+                    <input
+                      className={s.textInput}
+                      type="number"
+                      value={childComponentsProps[propName]}
+                      onChange={(e) =>
+                        updateChildComponentsProp(
+                          propName,
+                          parseFloat(e.target.value),
+                        )
                       }
                     />
                   );

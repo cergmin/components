@@ -1,0 +1,73 @@
+---
+title: PieChart
+source: 'https://github.com/cergmin/components/blob/main/src/components/PieChart/PieChart.tsx'
+---
+
+## Props
+
+<Playground
+  props={[
+    {
+      key: 'radius',
+      tsType: 'number',
+      valueEditor: 'number',
+      value: 250,
+    },
+    {
+      key: 'rotation',
+      tsType: 'number',
+      valueEditor: 'number',
+      value: 0,
+    },
+    {
+      key: 'theme',
+      tsType: "{ fill: string; }[]",
+      valueEditor: 'select',
+      value: [
+        [
+          { fill: 'var(--cmp-blue-900)' },
+          { fill: 'var(--cmp-blue-750)' },
+          { fill: 'var(--cmp-blue-500)' },
+          { fill: 'var(--cmp-blue-350)' },
+        ],
+        [
+          { fill: 'var(--cmp-green-900)' },
+          { fill: 'var(--cmp-green-750)' },
+          { fill: 'var(--cmp-green-500)' },
+          { fill: 'var(--cmp-green-350)' },
+        ],
+        [
+          { fill: 'var(--cmp-red-500)' },
+          { fill: 'var(--cmp-orange-500)' },
+          { fill: 'var(--cmp-yellow-500)' },
+          { fill: 'var(--cmp-green-500)' },
+          { fill: 'var(--cmp-cyan-500)' },
+          { fill: 'var(--cmp-blue-500)' },
+          { fill: 'var(--cmp-purple-500)' },
+        ]
+      ],
+    },
+    {
+      key: 'gap',
+      tsType: 'number',
+      valueEditor: 'number',
+      value: 1,
+    },
+    {
+      key: 'pieWidth',
+      tsType: 'number',
+      valueEditor: 'number',
+      value: 75,
+    },
+  ]}>
+  <PieChart
+    data={[
+      { title: 'Привет', value: 64 },
+      { title: 'Hello', value: 32 },
+      { title: 'Hallo', value: 16 },
+      { title: 'Ciao', value: 8 },
+      { title: 'Salve', value: 4 },
+      { title: 'Tere', value: 2 },
+    ]}
+  />
+</Playground>
