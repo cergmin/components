@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import postcssNested from 'postcss-nested';
 import { terser } from 'rollup-plugin-terser';
+import { visualizer } from "rollup-plugin-visualizer";
 import packageJSON from './package.json';
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
@@ -46,5 +47,6 @@ export default {
       inject: true,
     }),
     terser(),
+    visualizer(),
   ],
 };
